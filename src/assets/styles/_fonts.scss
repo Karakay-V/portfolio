@@ -1,0 +1,33 @@
+// Sora sans-serif font
+@font-face {
+  font-family: 'SoraVariable';
+  src: url('../fonts/sora/Sora-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 800; // Sora supports a range from 100 to 800
+  font-style: normal;
+  font-display: swap;
+}
+
+// Optional SCSS variable
+$sora-font-family: 'SoraVariable', sans-serif;
+
+//FONTS
+
+// Sora variations
+@mixin sora-font($weight: 400) {
+  font-family: $sora-font-family;
+  font-weight: $weight;
+}
+
+
+@mixin responsive-font($pc-size, $mob-size, $max-width) {
+  $add-size: $pc-size - $mob-size;
+  $max-width: $max-width - 320;
+  font-size: calc(#{$mob-size + px} + #{$add-size} * ((100vw - 320px) / #{$max-width}));
+}
+
+@mixin prevent-selecting {
+  -webkit-user-select: none; // Safari
+  -moz-user-select: none;    // Firefox
+  -ms-user-select: none;     // IE10+
+  user-select: none;         // Стандарт
+}
