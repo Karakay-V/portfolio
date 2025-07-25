@@ -6,6 +6,7 @@
         :value="data"
         :class="`state-${state} ${isFocused ? 'focused' : ''} ${errorMessage !== '' ? 'error' : ''}`"
         :disabled="state === InputState.Disabled"
+        :maxlength="maxLength"
         @input="handleInput"
         @focus="isFocused = true"
         @blur="handleBlur"
@@ -63,7 +64,12 @@
         type: String,
         default: "",
         required: false,
-      }
+      },
+      maxLength: {
+        type: Number,
+        default: 50,
+        required: false,
+      },
     },
     emits: ['update:data'],
     methods: {
