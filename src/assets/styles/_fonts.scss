@@ -25,9 +25,20 @@ $sora-font-family: 'SoraVariable', sans-serif;
   font-size: calc(#{$mob-size + px} + #{$add-size} * ((100vw - 320px) / #{$max-width}));
 }
 
+
+// Prevent user text selecting
 @mixin prevent-selecting {
-  -webkit-user-select: none; // Safari
-  -moz-user-select: none;    // Firefox
-  -ms-user-select: none;     // IE10+
-  user-select: none;         // Стандарт
+  -webkit-user-select: none;      // Safari
+  -moz-user-select: none;         // Firefox
+  -ms-user-select: none;          // IE10+
+  user-select: none;              // Standart
+}
+
+
+// Trimming long text with ellipsis replacement
+@mixin hide-overflowed-text {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 100%;
 }
