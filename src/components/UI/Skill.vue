@@ -44,7 +44,7 @@ export default defineComponent({
 });
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 @use "/src/assets/styles/fonts";
 @use "/src/assets/styles/image";
 @use "/src/assets/styles/colors" as *;

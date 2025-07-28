@@ -29,7 +29,7 @@
     </div>
 </template>
 
-<script lang="ts">
+<script scoped lang="ts">
 import { defineComponent } from 'vue';
 import { Theme } from '../../types/theme';
 import QuoteSymbolIcon from '../../assets/icons/quote-symbol.svg'; 

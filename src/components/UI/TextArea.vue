@@ -92,7 +92,7 @@
   })
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
   @use "/src/assets/styles/fonts" as *;
   @use "/src/assets/styles/colors" as *;
   @use "/src/assets/styles/image";
