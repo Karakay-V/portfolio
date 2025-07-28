@@ -50,7 +50,7 @@ export default defineComponent({
         padding: 0;
         background-color: transparent;
         cursor: pointer;
-        transition: 0.3s ease color, 0.3s ease border-bottom;
+        transition: 0.3s ease color;
         @include fonts.sora-font(600);
         @include fonts.responsive-font(20, 20, 1440);
         color: $primary-black;
@@ -60,7 +60,7 @@ export default defineComponent({
         }
 
         &.selected {
-            border-bottom: 1px solid $primary-neutral;
+            color: $primary-neutral;
         }
     }
 }
