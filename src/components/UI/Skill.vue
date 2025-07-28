@@ -1,5 +1,7 @@
 <template>
-    <div :class="`wrapper ${theme === Theme.Dark ? 'theme-dark' : 'theme-light'}`">
+    <div    :class="`wrapper ${currentTheme === Theme.Dark ? 'theme-dark' : 'theme-light'}`"
+            @click="$emit('focus')"
+    >
         <div class="container-icon">
             <img :src="icon" :alt="`Skill: ${name}`" />
         </div>
@@ -27,12 +29,17 @@ export default defineComponent({
             type: String,
             required: true,
         },
-        theme: {
-            type: String,
+        isFocused: {
+            type: Boolean,
+            default: false,
             required: true,
-            validator: (value: string) =>
-                (Object.values(Theme) as string[]).includes(value),
         },
+    },
+    emits: ['focus'],
+    computed: {
+        currentTheme(): string {
+            return this.isFocused ? Theme.Dark : Theme.Light;
+        }
     },
 });
 </script>
@@ -46,16 +53,22 @@ $maxWrapperWidth: calc(186px - 24px - 24px);
 $maxWrapperHeight: calc(186px - 37px - 37px);
 
 .wrapper {
+    cursor: pointer;
     border: 2px solid $primary-black;
     border-radius: 4px;
     padding: 37px 24px;
     margin: 5px;
+    transition: 0.3s ease all;
     
     width: $maxWrapperWidth;
     max-width: $maxWrapperWidth;
 
     height: $maxWrapperHeight;
     max-height: $maxWrapperHeight;
+
+    &:not(.theme-dark) {
+        transform: scale(0.98);
+    }
 
     .container-icon {
         margin: 0;
