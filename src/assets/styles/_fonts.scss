@@ -51,3 +51,20 @@ $sora-font-family: 'SoraVariable', sans-serif;
   text-overflow: ellipsis;
   overflow: hidden;
 }
+
+// Adding stroke to text
+@mixin stroke($width, $colour: #000) {
+  $shadows: ();
+
+  // Генеруємо точки навколо тексту у квадраті $width * $width
+  @for $x from -$width through $width {
+    @for $y from -$width through $width {
+      // Пропускаємо центр (0, 0), щоб не дублювати fill
+      @if $x != 0 or $y != 0 {
+        $shadows: append($shadows, #{$x}px #{$y}px 0 #{$colour}, comma);
+      }
+    }
+  }
+
+  text-shadow: $shadows;
+}

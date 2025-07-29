@@ -131,11 +131,11 @@
     }
 
     &.active {
-      background-color: lighten($primary-black, 20%);
+      background-color: lighten($primary-white, 20%);
       border-color: darken($primary-black, 10%);
       color: $primary-black;
       transform: scale(0.97);
-      box-shadow: 0 0 0 4px rgba($primary-black, 0.2);
+      //box-shadow: 0 0 0 4px rgba($primary-black, 0.2);
 
       .image_wrapper {
         img {
