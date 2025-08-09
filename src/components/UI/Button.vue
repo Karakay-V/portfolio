@@ -150,12 +150,12 @@
       outline: none;
     }
 
-    @media (max-width: 768px) {
-      padding: 14px 16px;
-    }
-
     &.medium {
       padding: 16px 20px;
+
+      @media (max-width: 768px) {
+        padding: 14px 16px;
+      }
     }
 
     &.small {
