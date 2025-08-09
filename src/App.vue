@@ -1,13 +1,15 @@
 <template>
-  <Header />
+  <!-- <Header /> -->
   <HeroSection />
   <SkillsSection />
+  <MyExpirienceSection />
 </template>
 
 <script setup lang="ts">
 import Header from './components/panels/Header.vue';
 import HeroSection from './components/panels/HeroSection.vue';
 import SkillsSection from './components/panels/SkillsSection.vue';
+import MyExpirienceSection from './components/panels/MyExpirienceSection.vue';
 </script>
 
 <style>
