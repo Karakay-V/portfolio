@@ -1,6 +1,10 @@
 <template>
     <div    :class="`wrapper ${currentTheme === Theme.Dark ? 'theme-dark' : 'theme-light'}`"
             @click="$emit('focus')"
+            @mousedown="handleMouseAction"
+            @mouseup="handleMouseAction"
+            @mouseenter="handleMouseAction"
+            @mouseleave="handleMouseAction"
     >
         <div class="container-top">
             <div class="container-title">
@@ -28,6 +32,7 @@ export default defineComponent({
     data() {
         return({
             Theme,
+            isPressed: this.isFocused,
         });
     },
     props: {
@@ -50,19 +55,24 @@ export default defineComponent({
         isFocused: {
             type: Boolean,
             default: false,
-            required: true,
+            required: false,
         },
     },
     emits: ['focus'],
     computed: {
         currentTheme(): string {
-            return this.isFocused ? Theme.Dark : Theme.Light;
+            return this.isPressed ? Theme.Dark : Theme.Light;
         }
+    },
+    methods: {
+        handleMouseAction() {
+            this.isPressed = !this.isPressed;
+        },
     },
 });
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 @use "/src/assets/styles/fonts";
 @use "/src/assets/styles/colors" as *;
 @use "/src/assets/styles/image";
