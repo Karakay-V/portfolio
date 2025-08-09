@@ -1,6 +1,10 @@
 <template>
     <div    :class="`wrapper ${currentTheme === Theme.Dark ? 'theme-dark' : 'theme-light'}`"
             @click="$emit('focus')"
+            @mousedown="handleMouseAction"
+            @mouseup="handleMouseAction"
+            @mouseenter="handleMouseAction"
+            @mouseleave="handleMouseAction"
     >
         <div class="container-icon">
             <img :src="icon" :alt="`Skill: ${name}`" />
@@ -18,6 +22,7 @@ export default defineComponent({
     data() {
         return({
             Theme,
+            isPressed: this.isFocused,
         });
     },
     props: {
@@ -32,14 +37,19 @@ export default defineComponent({
         isFocused: {
             type: Boolean,
             default: false,
-            required: true,
+            required: false,
         },
     },
     emits: ['focus'],
     computed: {
         currentTheme(): string {
-            return this.isFocused ? Theme.Dark : Theme.Light;
+            return this.isPressed ? Theme.Dark : Theme.Light;
         }
+    },
+    methods: {
+        handleMouseAction() {
+            this.isPressed = !this.isPressed;
+        },
     },
 });
 </script>
@@ -66,13 +76,29 @@ $maxWrapperHeight: calc(186px - 37px - 37px);
     height: $maxWrapperHeight;
     max-height: $maxWrapperHeight;
 
+    @media (max-width: 768px) {
+        $maxWrapperWidthMobile: calc(155px - 24px - 24px);
+        $maxWrapperHeightMobile: calc(155px - 24px - 24px);
+
+
+        width: $maxWrapperWidthMobile;
+        max-width: $maxWrapperWidthMobile;
+
+        height: $maxWrapperHeightMobile;
+        max-height: $maxWrapperHeightMobile;
+
+        padding: 24px;
+    }
+
     &:not(.theme-dark) {
         transform: scale(0.98);
     }
 
     .container-icon {
         margin: 0;
-        padding: 0 41px;
+        display: flex;
+        justify-content: center;
+        align-items: center;        
         
         img {
             @include image.prevent-manipulations;
