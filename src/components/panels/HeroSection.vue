@@ -2,7 +2,9 @@
     <div class="inner-hero_section">
         <div class="wrapper-hero_section">
 
-            <div data-aos="fade-right" class="container-banner">
+            <div data-aos="fade-left" data-aos-duration="2000" class="container-cover_image"></div>
+
+            <div data-aos="fade-right" data-aos-duration="2000" class="container-banner">
                 <h2 class="banner_heading">
                     <span class="display-regular">Hello I’am</span>
                     <span class="display-extra_bold"> Vlad Karakai.</span>
@@ -16,10 +18,6 @@
                 <p class="banner_paragraph">
                     I'm Evren Shah Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to specimen book.
                 </p>
-            </div>
-
-            <div data-aos="fade-left" class="container-cover_image">
-                <img class="image-cover" :src="BackgroundPCBoy" alt="Cover" />
             </div>
 
             <div class="container-social_buttons">
@@ -55,6 +53,7 @@ import RedditIcon from '../../assets/icons/reddit.png';
 import DiscordIcon from '../../assets/icons/discord.png';
 import BackgroundPCBoy from '../../assets/covers/boy-cover.pc.png';
 import BackgroundMobileBoy from '../../assets/covers/boy-cover.mobile.png';
+import { ButtonSize } from '../../types/button-types/button-size';
 
 export default defineComponent({
     name: "HeroSection",
@@ -62,6 +61,7 @@ export default defineComponent({
         return({
             ButtonIconPosition,
             ButtonState,
+            ButtonSize,
             LinkedInIcon,
             GitHubIcon,
             RedditIcon,
@@ -89,6 +89,14 @@ export default defineComponent({
 .inner-hero_section {
     padding: 60px 80px;
     max-height: 716px;
+
+    @media (max-width: 1260px) {
+        padding: 40px 16px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-height: max-content;
+    }
 }
 
 .wrapper-hero_section {
@@ -96,6 +104,10 @@ export default defineComponent({
     height: max-content;
     padding: 110px 0 110px 32px;
 
+    @media (max-width: 1260px) {
+        display: inline-block;
+        padding: 0;
+    }
 }
 
 h2, p {
@@ -125,6 +137,10 @@ h2, p {
                 @include fonts.stroke(3, $primary-black);
                 letter-spacing: 1px;
                 color: $primary-white;
+
+                @media (max-width: 1260px) {
+                    @include fonts.stroke(2, $primary-black);
+                }
             }
         }
     }
@@ -139,17 +155,34 @@ h2, p {
         margin-top: 32px;
     }
 
+    @media (max-width: 1260px) {
+        margin-top: 32px;
+    }
+
 }
 
 .container-cover_image {
+    @include image.prevent-manipulations;
+    transition: width 0.3s ease;
+    width: 60%;
+    max-width: 796px;
     height: 100%;
     position: absolute;
-    top: 0;
+    bottom: 0;
     right: 32px;
     z-index: 1;
 
-    img.image-cover {
-        height: 100%;
+    background-image: url('../../assets/covers/boy-cover.pc.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+
+    @media (max-width: 1260px) {
+        background-image: url('../../assets/covers/boy-cover.mobile.png');
+        width: 100%;
+        aspect-ratio: 686 / 664;
+        position: static;
     }
 }
 
@@ -163,5 +196,11 @@ h2, p {
     position: absolute;
     left: 32px;
     bottom: -28px;
+
+    @media (max-width: 1260px) {
+        margin-top: 32px;
+        position: static;
+        gap: 24px;
+    }
 }
 </style>
