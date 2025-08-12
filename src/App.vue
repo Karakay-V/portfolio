@@ -3,6 +3,7 @@
   <HeroSection />
   <SkillsSection />
   <MyExpirienceSection />
+  <AboutMeSection />
 </template>
 
 <script setup lang="ts">
@@ -10,12 +11,17 @@ import Header from './components/panels/Header.vue';
 import HeroSection from './components/panels/HeroSection.vue';
 import SkillsSection from './components/panels/SkillsSection.vue';
 import MyExpirienceSection from './components/panels/MyExpirienceSection.vue';
+import AboutMeSection from './components/panels/AboutMeSection.vue';
 </script>
 
 <style>
   body {
     margin: 0 auto;
     max-width: 1920px;
+  }
+
+  div.app {
+    overflow-x: hidden;
   }
 
   ::selection {
