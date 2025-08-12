@@ -1,5 +1,5 @@
 <template>
-  <!-- <Header /> -->
+  <Header />
   <HeroSection />
   <SkillsSection />
   <MyExpirienceSection />

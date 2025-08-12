@@ -1,5 +1,5 @@
 <template>
-    <div class="inner-skills_section">
+    <div id="skills" class="inner-skills_section">
         <div data-aos="fade-down" class="wrapper-title">
             <h2 class="title">
                 <span class="display-regular">My</span>

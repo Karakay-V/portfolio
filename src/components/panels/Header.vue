@@ -32,12 +32,57 @@
 
         <a :href="CV" 
            download="Karakai-V_CV-EN.pdf"
+           class="download_button-cv"
         >
             <Button label="Resume"
                     :icon="DownloadIcon"
                     :iconPosition="ButtonIconPosition.Right" />
         </a>
 
+        <Slide class="burger-menu"
+               noOverlay
+               right
+               closeOnNavigation
+        >
+            <div class="container-burger_menu_nav">
+                <NavLink
+                    label="About Me"
+                    to="#about-me"
+                    :theme="Theme.Dark"
+                    :isSelected="selectedLink === '#about-me'"
+                    @click="handleClick('#about-me', $event)" />
+
+                <NavLink
+                    label="Skills"
+                    to="#skills"
+                    :theme="Theme.Dark"
+                    :isSelected="selectedLink === '#skills'"
+                    @click="handleClick('#skills', $event)" />
+
+                <NavLink
+                    label="Projects"
+                    to="#projects"
+                    :theme="Theme.Dark"
+                    :isSelected="selectedLink === '#projects'"
+                    @click="handleClick('#projects', $event)" />
+
+                <NavLink
+                    label="Contact me"
+                    to="#contact-me"
+                    :theme="Theme.Dark"
+                    :isSelected="selectedLink === '#contact-me'"
+                    @click="handleClick('#contact-me', $event)" />
+            </div>
+
+            <a :href="CV" 
+                download="Karakai-V_CV-EN.pdf"
+            >
+                <Button label="Resume"
+                        :icon="DownloadIcon"
+                        :state="ButtonState.Active"
+                        :iconPosition="ButtonIconPosition.Right" />
+            </a>
+        </Slide>
     </header>
 
 </template>
@@ -51,6 +96,9 @@ import DownloadIcon from '../../assets/icons/download.png';
 import { ButtonIconPosition } from '../../types/button-types/button-icon-position';
 import NavLink from '../UI/NavLink.vue';
 import CV from '../../assets/CV/Karakai-V_CV-EN.pdf';
+import { Slide } from 'vue3-burger-menu';
+import { Theme } from '../../types/theme';
+import { ButtonState } from '../../types/button-types/button-state';
 
 export default defineComponent({
     name: "Header",
@@ -58,9 +106,12 @@ export default defineComponent({
         Logo,
         NavLink,
         Button,
+        Slide,
     },
     data() {
         return({
+            Theme,
+            ButtonState,
             LogoIcon,
             DownloadIcon,
             ButtonIconPosition,
@@ -71,6 +122,7 @@ export default defineComponent({
                 width: '0px',
                 transform: 'scaleX(1)',
             },
+            burgerIsActive: false,
         });
     },
     methods: {
@@ -118,6 +170,11 @@ a {
     justify-content: space-between;
     align-items: center;
     gap: 32px;
+
+    @media (max-width: 768px) {
+        width: calc(100% - 16px - 16px);
+        padding: 16px;
+    }
 }
 
 .wrapper-navigation_links {
@@ -139,5 +196,70 @@ a {
         transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), 0.3s ease left, 0.3s ease width;
         pointer-events: none;
     }
+
+    @media (max-width: 768px) {
+        display: none;
+    }
 }
+
+.download_button-cv {
+    @media (max-width: 768px) {
+        display: none;
+    }
+}
+
+/* Styling burger button */
+.burger-menu {
+    display: none;
+
+    @media (max-width: 768px) {
+        display: block;
+    }
+}
+::v-deep(.bm-burger-button) {
+    position: relative;
+    top: 0;
+    left: auto;
+    right: 0;
+    width: calc(27px + 4px);
+    height: calc(18px + 4px);
+}
+::v-deep(.bm-burger-bars) {
+    background-color: $primary-black;
+    height: 17%;
+}
+
+/* Styling burger menu */
+::v-deep(.bm-menu) {
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+::v-deep(.bm-item-list) {
+    height: calc(100% - 60px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.container-burger_menu_nav {
+    color: $primary-white !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+::v-deep(.cross-style) {
+    top: 25px;
+    right: 9px;
+}
+::v-deep(.bm-cross) {
+    background-color: $primary-white;
+    width: 4px !important;
+    height: 28px !important;
+}
+
 </style>

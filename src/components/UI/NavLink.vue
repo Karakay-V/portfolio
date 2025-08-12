@@ -1,6 +1,6 @@
 <template>
     <div class="wrapper">
-        <button :class="`${isSelected ? 'selected' : ''}`" 
+        <button :class="`${isSelected ? 'selected' : ''} ${theme === Theme.Dark ? 'theme-dark' : 'theme-light'}`" 
             v-scroll-to="{
                 element: to,
                 duration: 1200,
@@ -15,9 +15,15 @@
 
 <script scoped lang="ts">
 import { defineComponent } from 'vue';
+import { Theme } from '../../types/theme';
 
 export default defineComponent({
     name: "NavLink",
+    data() {
+        return({
+            Theme,
+        });
+    },
     props: {
         to: {
             type: String,
@@ -31,6 +37,13 @@ export default defineComponent({
             type: Boolean,
             default: false,
             required: false,
+        },
+        theme: {
+            type: String,
+            default: Theme.Light,
+            required: false,
+            validator: (value: string) =>
+                (Object.values(Theme) as string[]).includes(value),
         },
     },
 });
@@ -52,8 +65,7 @@ export default defineComponent({
         cursor: pointer;
         transition: 0.3s ease color;
         @include fonts.sora-font(600);
-        @include fonts.responsive-font(20, 20, 1440);
-        color: $primary-black;
+        @include fonts.responsive-font(20, 16, 1440);
 
         &:hover {
             color: $primary-neutral;
@@ -61,6 +73,14 @@ export default defineComponent({
 
         &.selected {
             color: $primary-neutral;
+        }
+
+        &.theme-light {
+            color: $primary-black;
+        }
+
+        &.theme-dark {
+            color: $primary-white;
         }
     }
 }
