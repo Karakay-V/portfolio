@@ -4,6 +4,7 @@
   <SkillsSection />
   <MyExpirienceSection />
   <AboutMeSection />
+  <MyProjects />
 </template>
 
 <script setup lang="ts">
@@ -12,6 +13,7 @@ import HeroSection from './components/panels/HeroSection.vue';
 import SkillsSection from './components/panels/SkillsSection.vue';
 import MyExpirienceSection from './components/panels/MyExpirienceSection.vue';
 import AboutMeSection from './components/panels/AboutMeSection.vue';
+import MyProjects from './components/panels/MyProjects.vue';
 </script>
 
 <style>
