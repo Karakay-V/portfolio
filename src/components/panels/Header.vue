@@ -107,7 +107,10 @@ import DownloadIcon from '../../assets/icons/download.png';
 import { ButtonIconPosition } from '../../types/button-types/button-icon-position';
 import NavLink from '../UI/NavLink.vue';
 import CV from '../../assets/CV/Karakai-V_CV-EN.pdf';
+
+// @ts-ignore
 import { Slide } from 'vue3-burger-menu';
+
 import { Theme } from '../../types/theme';
 import { ButtonState } from '../../types/button-types/button-state';
 

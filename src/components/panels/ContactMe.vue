@@ -75,7 +75,11 @@
                             hitechnic00074220@gmail.com
                         </a>
                     </h4>
-                    <h4 class="contact-numbers_for_counting">1234567890</h4>
+                    <h4 class="contact-phone">
+                        <a href="tel: 1234567890">
+                            1234567890
+                        </a>
+                    </h4>
                 </div>
             </div>
         </div>
@@ -160,7 +164,6 @@ export default defineComponent({
         handleForm() {
             if (!this.validateForm()) {
                 toast.error("Fill in name, email & message 😎", {
-                    type: "error",
                     position: "top-center",
                     transition: "slide",
                 });
@@ -369,7 +372,7 @@ h3, h4, p, span, a {
         }
 
         h4.contact-email,
-        h4.contact-numbers_for_counting {
+        h4.contact-phone {
             @include fonts.sora-font(600);
             @include fonts.responsive-font(28, 20, 1440);
             color: $primary-black;

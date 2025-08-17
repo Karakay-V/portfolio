@@ -20,6 +20,7 @@
     "vueperslides": "^3.6.0"
   },
   "devDependencies": {
+    "@types/aos": "^3.0.7",
     "@vitejs/plugin-vue": "^6.0.0",
     "@vue/tsconfig": "^0.7.0",
     "sass": "^1.89.2",
