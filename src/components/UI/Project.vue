@@ -1,23 +1,13 @@
 <template>
     <div class="inner-project">
         <div :class="`wrapper-project ${align === Align.Right ? 'align-right' : 'align-left'}`">
-            <div    :data-aos="handleAOS(
-                                    align === Align.Right ? 'fade-left' : 'fade-right',
-                                    'fade-downs'
-                                )" 
-                    class="inner-project_image"
-            >
+            <div class="inner-project_image">
                 <div class="wrapper-project_image">
                     <img class="image-screenshoot" :src="screenshoot" :alt="name" />
                 </div>
             </div>
 
-            <div    :data-aos="handleAOS(
-                                    align === Align.Right ? 'fade-right' : 'fade-left',
-                                    'fade-up'
-                                )" 
-                    class="inner-project_info"
-            >
+            <div class="inner-project_info">
                 <div class="wrapper-project_info">
                     <h3 class="project-number">
                         {{ number }}
@@ -46,10 +36,7 @@
 <script scoped lang="ts">
 import { defineComponent } from 'vue';
 import { Align } from '../../types/align';
-import ProjectImage from '../../assets/projects/project-1.png';
 import LinkIcon from '../../assets/icons/readmore-default.png';
-// import LinkHoverIcon from '../../assets/icons/readmore-hover.png';
-import { useResponsiveAos } from '../../utils/aosHelper';
 
 function isValidLink(value: string): boolean {
   if (value === '') return true; // allow empty (not required)
@@ -99,8 +86,7 @@ export default defineComponent({
         },
         screenshoot: {
             type: String,
-            required: false, // make me true
-            default: ProjectImage,
+            required: true,
         },
         number: {
             type: String,
@@ -113,11 +99,6 @@ export default defineComponent({
         description: {
             type: String,
             required: true,
-        },
-    },
-    methods: {
-        handleAOS(defaultAnimation: string, verticalAnimation: string) {
-            return useResponsiveAos(defaultAnimation, verticalAnimation).value;
         },
     },
 });
