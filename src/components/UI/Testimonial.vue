@@ -2,6 +2,10 @@
     <div class="wrapper">
         <div    :class="`container-content ${currentTheme === Theme.Dark ? 'theme-dark' : 'theme-light'}`"
                 @click="$emit('focus')"
+                @mousedown="handleMouseAction"
+                @mouseup="handleMouseAction"
+                @mouseenter="handleMouseAction"
+                @mouseleave="handleMouseAction"
         >
             <div class="container-image_wrapper">
                 <div class="container-image">
@@ -40,6 +44,7 @@ export default defineComponent({
         return({
             Theme,
             QuoteSymbolIcon,
+            isPressed: this.isFocused,
         });
     },
     props: {
@@ -62,14 +67,19 @@ export default defineComponent({
         isFocused: {
             type: Boolean,
             default: false,
-            required: true,
+            required: false,
         },
     },
     emits: ['focus'],
     computed: {
         currentTheme(): string {
-            return this.isFocused ? Theme.Dark : Theme.Light;
+            return this.isPressed ? Theme.Dark : Theme.Light;
         }
+    },
+    methods: {
+        handleMouseAction() {
+            this.isPressed = !this.isPressed;
+        },
     },
 });
 </script>
