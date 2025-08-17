@@ -28,25 +28,15 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, onMounted, onUnmounted, computed } from "vue";
+import { defineComponent } from "vue";
+import { useResponsiveAos } from "../../utils/aosHelper";
 import AboutMePicture from "../../assets/covers/about-me.png";
 
 export default defineComponent({
   name: "AboutMeSection",
   setup() {
-    const width = ref(window.innerWidth);
-
-    const onResize = () => (width.value = window.innerWidth);
-    onMounted(() => window.addEventListener("resize", onResize));
-    onUnmounted(() => window.removeEventListener("resize", onResize));
-
-    // міняємо анімацію залежно від ширини
-    const aosTypeImage = computed(() =>
-      width.value < 1260 ? "fade-up" : "fade-right"
-    );
-    const aosTypeStory = computed(() =>
-      width.value < 1260 ? "fade-up" : "fade-left"
-    );
+    const aosTypeImage = useResponsiveAos("fade-right", "fade-down");
+    const aosTypeStory = useResponsiveAos("fade-left", "fade-up");
 
     return {
       AboutMePicture,
