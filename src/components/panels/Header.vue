@@ -1,5 +1,16 @@
+<script setup lang="ts">
+import { ref } from 'vue';
+import { useFixedHeader } from 'vue-use-fixed-header';
+
+const headerRef = ref(null);
+
+const { styles } = useFixedHeader(headerRef)
+</script>
+
 <template>
-    <header id="header">
+    <div class="header_indent"></div>
+
+    <header id="header" ref="headerRef" :style="styles">
         <Logo :icon="LogoIcon" title="Personal" />
 
         <nav class="wrapper-navigation_links">
@@ -156,20 +167,36 @@ export default defineComponent({
 
 <style scoped lang="scss">
 @use "/src/assets/styles/colors" as *;
+@use "/src/assets/styles/shadow";
 
 a {
     text-decoration: none;
 }
 
+.header_indent {
+    height: 108px;
+
+    @media (max-width: 768px) {
+        height: 72px;
+    }
+}
+
 #header {
     width: calc(100% - 80px - 80px);
     padding: 24px 80px;
-    background-color: $primary-white;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     gap: 32px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    @include shadow.testimonial-shadow;
 
     @media (max-width: 768px) {
         width: calc(100% - 16px - 16px);
@@ -231,6 +258,7 @@ a {
 
 /* Styling burger menu */
 ::v-deep(.bm-menu) {
+    height: 100vh;
     background: rgba(0, 0, 0, 0.95);
     backdrop-filter: blur(6px);
     -webkit-backdrop-filter: blur(6px);
