@@ -7,6 +7,7 @@
   <MyProjects />
   <MyTestimonial />
   <ContactMe />
+  <Footer />
 </template>
 
 <script setup lang="ts">
@@ -18,6 +19,7 @@ import AboutMeSection from './components/panels/AboutMeSection.vue';
 import MyProjects from './components/panels/MyProjects.vue';
 import MyTestimonial from './components/panels/MyTestimonial.vue';
 import ContactMe from './components/panels/ContactMe.vue';
+import Footer from './components/panels/Footer.vue';
 </script>
 
 <style>
