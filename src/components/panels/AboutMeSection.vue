@@ -1,11 +1,11 @@
 <template>
     <div id="about-me" class="inner-expirience_section">
         <div class="wrapper-about_me_section">
-            <div data-aos="fade-right" class="wrapper-image">
+            <div :data-aos="aosTypeImage" class="wrapper-image">
                 <img :src="AboutMePicture" alt="About Me" class="image-about_me" />
             </div>
 
-            <div data-aos="fade-left" class="wrapper-story">
+            <div :data-aos="aosTypeStory" class="wrapper-story">
                 <h2 class="title">
                     <span class="display-regular">About</span>
                     <span class="display-extra_bold"> Me</span>
@@ -28,16 +28,32 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
-import AboutMePicture from '../../assets/covers/about-me.png';
+import { defineComponent, ref, onMounted, onUnmounted, computed } from "vue";
+import AboutMePicture from "../../assets/covers/about-me.png";
 
 export default defineComponent({
-    name: "AboutMeSection",
-    data() {
-        return({
-            AboutMePicture,
-        });
-    },
+  name: "AboutMeSection",
+  setup() {
+    const width = ref(window.innerWidth);
+
+    const onResize = () => (width.value = window.innerWidth);
+    onMounted(() => window.addEventListener("resize", onResize));
+    onUnmounted(() => window.removeEventListener("resize", onResize));
+
+    // міняємо анімацію залежно від ширини
+    const aosTypeImage = computed(() =>
+      width.value < 1260 ? "fade-up" : "fade-right"
+    );
+    const aosTypeStory = computed(() =>
+      width.value < 1260 ? "fade-up" : "fade-left"
+    );
+
+    return {
+      AboutMePicture,
+      aosTypeImage,
+      aosTypeStory,
+    };
+  },
 });
 </script>
 
@@ -66,13 +82,21 @@ h2, p {
     gap: 80px;
     flex-wrap: wrap;
     align-items: start;
+    overflow-x: clip;
 
     @media (max-width: 1260px) {
         padding: 0;
         gap: 20px;
         flex-direction: column;
-        align-items: center;
+        align-items: stretch;        
     }
+}
+
+@media (max-width: 1260px) {
+  .aos-init[data-aos="fade-left"],
+  .aos-init[data-aos="fade-right"] {
+    transform: translate3d(0,0,0); /* без !important зазвичай достатньо */
+  }
 }
 
 .wrapper-image {
