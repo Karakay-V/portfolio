@@ -6,6 +6,7 @@
   <AboutMeSection />
   <MyProjects />
   <MyTestimonial />
+  <ContactMe />
 </template>
 
 <script setup lang="ts">
@@ -16,6 +17,7 @@ import MyExpirienceSection from './components/panels/MyExpirienceSection.vue';
 import AboutMeSection from './components/panels/AboutMeSection.vue';
 import MyProjects from './components/panels/MyProjects.vue';
 import MyTestimonial from './components/panels/MyTestimonial.vue';
+import ContactMe from './components/panels/ContactMe.vue';
 </script>
 
 <style>
