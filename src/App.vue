@@ -18,9 +18,12 @@ import AboutMeSection from './components/panels/AboutMeSection.vue';
   body {
     margin: 0 auto;
     max-width: 1920px;
+    overflow-x: clip;
+    overflow-x: hidden;
   }
 
   div.app {
+    overflow: clip;
     overflow-x: hidden;
   }
 
