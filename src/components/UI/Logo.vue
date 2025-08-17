@@ -38,7 +38,7 @@ export default defineComponent({
         padding: 6px 0;
 
         img {
-            width: max-content;
+            width: auto;
             height: 40px;
         }
 
