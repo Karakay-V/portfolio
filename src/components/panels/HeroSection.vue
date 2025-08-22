@@ -16,7 +16,7 @@
                     <span class="display-extra_bold"> Kyiv.</span>
                 </h2>
                 <p class="banner_paragraph">
-                    I'm Evren Shah Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to specimen book.
+                    I began my coding journey in 2021 and since then I’ve been creating digital things that (hopefully) make life easier. When I’m not coding, I’m probably reading about psychology, working out, or trying to make music - though whether it’s really music is still up for debate.
                 </p>
             </div>
 
@@ -76,7 +76,7 @@ export default defineComponent({
     methods: {
         openLink(url: string) {
             window.open(url, '_blank');
-        }
+        },
     },
 });
 </script>
