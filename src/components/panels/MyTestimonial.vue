@@ -10,27 +10,17 @@
         <div class="wrapper-testimonial_section">
 
             <!-- Example how to add Testimonials -->
-            
-            <div data-aos="fade-up">
+            <!--  -->
+            <!-- <div data-aos="fade-up">
                 <Testimonial    :photo="BoyPhoto"
                                 quote="I recently had to jump on 10+ different calls across eight different countries to find the right owner."
                                 person="Evren Shah"
                                 position="Designer"/>
                
-            </div>
+            </div> -->
 
-            <div data-aos="fade-up">        
-                <Testimonial    :photo="GirlPhoto"
-                                quote="I recently had to jump on 10+ different calls across eight different countries to find the right owner."
-                                person="Flora sheen"
-                                position="Designer"/>
-            </div>
-
-            <div data-aos="fade-up">
-                <Testimonial    :photo="BoyPhoto"
-                                quote="I recently had to jump on 10+ different calls across eight different countries to find the right owner."
-                                person="Evren Shah"
-                                position="Designer"/>
+            <div data-aos="fade-up" class="container-no_testimonials">
+                <p>Looks a bit empty here... 👀 Be the first to share your feedback!</p>
             </div>
 
         </div>
@@ -105,6 +95,16 @@ export default defineComponent({
     align-items: center;
     flex-wrap: wrap;
     gap: 4px 0;
+}
+
+.container-no_testimonials {
+    p {
+        @include fonts.sora-font(600);
+        @include fonts.responsive-font(28, 20, 1440);
+        @include fonts.prevent-selecting;
+        color: $primary-black;
+        text-align: center;
+    }
 }
 
 </style>
