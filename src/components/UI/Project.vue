@@ -226,6 +226,7 @@ h3, h4, p {
         letter-spacing: 0.32px;
         line-height: 150%;
         color: $zinc-500;
+        white-space: pre-line;
     }
 
     .container-links {
