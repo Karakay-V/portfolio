@@ -11,7 +11,7 @@ const { styles } = useFixedHeader(headerRef)
     <div class="header_indent"></div>
 
     <header id="header" ref="headerRef" :style="styles">
-        <Logo :icon="LogoIcon" title="Personal" />
+        <Logo title="Personal" />
 
         <nav class="wrapper-navigation_links">
             <div class="underline" :style="underlineStyle"></div>
@@ -101,7 +101,6 @@ const { styles } = useFixedHeader(headerRef)
 <script lang="ts">
 import { defineComponent } from 'vue';
 import Logo from '../UI/Logo.vue';
-import LogoIcon from '../../assets/icons/logotype.png';
 import Button from '../UI/Button.vue';
 import DownloadIcon from '../../assets/icons/download.png';
 import { ButtonIconPosition } from '../../types/button-types/button-icon-position';
@@ -126,7 +125,6 @@ export default defineComponent({
         return({
             Theme,
             ButtonState,
-            LogoIcon,
             DownloadIcon,
             ButtonIconPosition,
             CV,
