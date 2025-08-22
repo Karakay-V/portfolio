@@ -13,16 +13,16 @@
 
                 <div class="wrapper-text_block">
                     <p>
-                        Привіт! Мене звати Владислав, я full-stack розробник, який поєднує бекенд і фронтенд навички для створення сучасних веб-рішень.  
+                        Hi! My name is Vladyslav, I am a full-stack developer who combines backend and frontend skills to create modern web solutions.
                     </p>
                     <p>
-                        Мій шлях у програмуванні почався ще у 2021 році. У 2022 я вступив до університету на технічну спеціальність, щоб поглибити свої знання та розвиватися в цій сфері. З того часу я працюю над різними проєктами - від спільних стартапів з однодумцями в університеті до реалізацій особистих ідей, що здаються мені цікавими.  
+                        My journey in programming began back in 2021. In 2022, I enrolled in university for a technical major to deepen my knowledge and continue developing in this field. Since then, I have been working on various projects - from joint startups with fellow students at the university to implementing personal ideas that I find interesting.
                     </p>
                     <p>
-                        У роботі окрім технологій для побудови бекенду, й фронтенду я також користуюсь своїми супутньо набутими знаннями в системному адмініструванні. Ці інструменти дозволяють мені створювати продуктивні, масштабовані та зручні у підтримці додатки.
+                        In my work, in addition to backend and frontend technologies, I also make use of my complementary knowledge in system administration. These skills allow me to build productive, scalable, and easy-to-maintain applications.
                     </p>
                     <p>
-                        Не обійшлося й без хоббі, я захоплююсь читанням літератури по Психології, Філософії, Саморозвитку, піклуюсь я й про своє тіло, зокрема займаюсь легкою атлетикою та звичайними заняттями в залі з вагою, а також з недавнього часу до цього списку долучилася ще й музика. Моя мета - розвиватися як хороший інженер, яскрава особистість, й гарний співрозмовник.
+                        Outside of coding, I enjoy reading literature on psychology, philosophy, and self-development. I also take care of my body by practicing athletics and regular gym workouts with weights, and more recently, I’ve added music to this list as well. My goal is to grow as a skilled engineer, a bright personality, and a good conversationalist.
                     </p>
                 </div>
             </div>
