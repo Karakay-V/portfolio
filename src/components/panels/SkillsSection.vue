@@ -9,17 +9,18 @@
 
         <div data-aos="fade-up" class="wrapper-skills_section">
 
-            <Skill name="GitHub" :icon="GitHubIcon" :is-focused="false" />
-            <Skill name="GitHub" :icon="GitHubIcon" :is-focused="false" />
-            <Skill name="GitHub" :icon="GitHubIcon" :is-focused="false" />
-            <Skill name="GitHub" :icon="GitHubIcon" :is-focused="false" />
-            <Skill name="GitHub" :icon="GitHubIcon" :is-focused="false" />
-
-            <Skill name="GitHub" :icon="GitHubIcon" :is-focused="false" />
-            <Skill name="GitHub" :icon="GitHubIcon" :is-focused="false" />
-            <Skill name="GitHub" :icon="GitHubIcon" :is-focused="false" />
-            <Skill name="GitHub" :icon="GitHubIcon" :is-focused="false" />
-            <Skill name="GitHub" :icon="GitHubIcon" :is-focused="false" />
+            <Skill name="Git" :icon="GitIcon" />
+            <Skill name="GitHub" :icon="GitHubIcon" />
+            <Skill name="Linux" :icon="LinuxIcon" />
+            <Skill name="Docker" :icon="DockerIcon" />
+            <Skill name="Postgres" :icon="PostgresIcon" />
+            <Skill name="Java" :icon="JavaIcon" />
+            <Skill name="Spring Boot" :icon="SpringBootIcon" />
+            <Skill name="HTML5 & CSS3" :icon="Html5AndCss3Icon" />
+            <Skill name="Sass" :icon="SassIcon" />
+            <Skill name="JavaScript" :icon="JavaScriptIcon" />
+            <Skill name="Vue" :icon="VueIcon" />
+            <Skill name="AWS EC2" :icon="AwsIcon" />
 
         </div>
     </div>
@@ -28,13 +29,35 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import Skill from '../UI/Skill.vue';
+import GitIcon from '../../assets/icons/icon-git.png';
 import GitHubIcon from '../../assets/icons/github.png';
+import LinuxIcon from '../../assets/icons/tux.png';
+import DockerIcon from '../../assets/icons/docker.png';
+import PostgresIcon from '../../assets/icons/postgres.png';
+import JavaIcon from '../../assets/icons/java.png';
+import SpringBootIcon from '../../assets/icons/spring-boot.png';
+import Html5AndCss3Icon from '../../assets/icons/html5-and-css3.png';
+import SassIcon from '../../assets/icons/icon-sass.png';
+import JavaScriptIcon from '../../assets/icons/icon-javascript.png';
+import VueIcon from '../../assets/icons/vue.png';
+import AwsIcon from '../../assets/icons/aws.png';
 
 export default defineComponent({
     name: "SkillsSection",
     data() {
         return({
+            GitIcon,
             GitHubIcon,
+            LinuxIcon,
+            DockerIcon,
+            PostgresIcon,
+            JavaIcon,
+            SpringBootIcon,
+            Html5AndCss3Icon,
+            SassIcon,
+            JavaScriptIcon,
+            VueIcon,
+            AwsIcon,
         });
     },
     components: {

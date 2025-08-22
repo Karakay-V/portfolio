@@ -88,6 +88,11 @@ $maxWrapperHeight: calc(186px - 37px - 37px);
         max-height: $maxWrapperHeightMobile;
 
         padding: 24px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
     }
 
     &:not(.theme-dark) {
@@ -117,6 +122,10 @@ $maxWrapperHeight: calc(186px - 37px - 37px);
         @include fonts.responsive-font(20, 20, 1440);
         @include fonts.hide-overflowed-text-multiline(2);
         text-align: center;
+
+        @media (max-width: 768px) {
+            margin: 0;
+        }
     }
 
     &.theme-light {
