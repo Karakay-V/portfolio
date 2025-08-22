@@ -1,0 +1,27 @@
+name: Build and Deploy Vue
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build_vue:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build Vue
+        run: npm run build
+
+      - name: Deploy to another repo
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.PERSONAL_TOKEN }}
+          publish_dir: ./dist
+          external_repository: Karakay-V/karakay-v.github.io
+          publish_branch: main
