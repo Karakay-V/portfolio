@@ -10,24 +10,10 @@
         <div class="wrapper-expirience_section">
 
             <div data-aos="fade-up">
-                <Experience :icon="GoogleIcon"
-                            position="Lead Software Engineer at Google"
-                            description="As a Senior Software Engineer at Google, I played a pivotal role in developing innovative solutions for Google's core search algorithms. Collaborating with a dynamic team of engineers, I contributed to the enhancement of search accuracy and efficiency, optimizing user experiences for millions of users worldwide."
-                            period="Nov 2019 - Present" />
-            </div>
-
-            <div data-aos="fade-up">        
-                <Experience :icon="YouTubeIcon"
-                            position="Lead Software Engineer at Google"
-                            description="As a Senior Software Engineer at Google, I played a pivotal role in developing innovative solutions for Google's core search algorithms. Collaborating with a dynamic team of engineers, I contributed to the enhancement of search accuracy and efficiency, optimizing user experiences for millions of users worldwide."
-                            period="Nov 2019 - Present" />
-            </div>
-
-            <div data-aos="fade-up">
-                <Experience :icon="AppleIcon"
-                            position="Lead Software Engineer at Google"
-                            description="As a Senior Software Engineer at Google, I played a pivotal role in developing innovative solutions for Google's core search algorithms. Collaborating with a dynamic team of engineers, I contributed to the enhancement of search accuracy and efficiency, optimizing user experiences for millions of users worldwide."
-                            period="Nov 2019 - Present" />
+                <Experience :icon="DuckWhichOpenToWork"
+                    position="Open to Work in Web Development"
+                    description="At the moment, I don’t have official commercial experience in the field (the kind recruiters usually expect to see). However, I have been actively learning and building my own projects since 2021 from web apps and APIs to full portfolio websites. I’m eager to join a team where I can apply my skills, keep growing, and contribute to real-world products."
+                    period="Currently" />
             </div>
 
         </div>
@@ -37,17 +23,18 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import Experience from '../UI/Experience.vue';
-import GoogleIcon from '../../assets/icons/google.png';
-import YouTubeIcon from '../../assets/icons/youtube.png';
-import AppleIcon from '../../assets/icons/apple.png';
+
+/***
+    Image Designer: https://www.figma.com/@najmahsalam
+    Figma File: https://www.figma.com/community/file/1313934100864626000/alternative-linkedin-opentowork-banners
+***/
+import DuckWhichOpenToWork from '../../assets/icons/open-to-work.png';
 
 export default defineComponent({
     name: "MyExpirienceSection",
     data() {
         return({
-            GoogleIcon,
-            YouTubeIcon,
-            AppleIcon,
+            DuckWhichOpenToWork,
         });
     },
     components: {
