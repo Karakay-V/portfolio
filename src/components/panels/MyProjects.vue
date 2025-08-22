@@ -10,32 +10,34 @@
         <div class="wrapper-projects_section">
 
             <div :data-aos="handleAOS('fade-left', 'fade-up')">
-                <Project    :screenshoot="ProjectScreenshoot1"
+                <Project    :screenshoot="EsettlementScreenshoot"
                             number="01"
-                            name="Crypto Screener Application"
-                            description="I'm Evren Shah Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to specimen book."
-                            link="https://github.com/"
-                            sourceLink="https://github.com/" />
+                            name="Electronic settlement system for dormitories"
+                            description="Esettltment is the electronic settlement system for dormitories. \nIt's main task is to simplify the process of submitting documents for accommodation in a dormitory by applicants/students."
+                            link="https://3.76.126.104/" />
             </div>
 
             <div :data-aos="handleAOS('fade-right', 'fade-up')">        
-                <Project    :screenshoot="ProjectScreenshoot2"
+                <Project    :screenshoot="USeekScreenshoot"
                             number="02"
-                            name="Euphoria - Ecommerce (Apparels) Website Template"
-                            description="I'm Evren Shah Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to specimen book.
-when an unknown printer took a galley of type and scrambled it to specimen book."
-                            link="https://github.com/"
-                            sourceLink="https://github.com/"
+                            name="U'Seek Student Marketplace (Frontend side)"
+                            description="
+                                U'Seek — University (університет) seek (search), and U (slang for “you”). Slogan: “U'Seek — for us, by us. 
+                                U'Seek is the first marketplace in Ukraine created “by students, for students.”
+                                Compared to other well-known global and Ukrainian marketplaces, we are still quite small. However, our users — especially students — already have the opportunity to bring their products or services to a (still low-competition) market in order to find potential buyers or partners."
+                            link="https://useek.com.ua/"
                             :align="Align.Right" />
             </div>
 
             <div :data-aos="handleAOS('fade-left', 'fade-up')">
-                <Project    :screenshoot="ProjectScreenshoot3"
+                <Project    :screenshoot="PortfolioScreenshoot"
                             number="03"
-                            name="Blog Website Template"
-                            description="I'm Evren Shah Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to specimen book."
-                            link="https://github.com/"
-                            sourceLink="https://github.com/" />
+                            name="Portfolio Website"
+                            description="This is the project you’re literally looking at right now.  
+                                If it’s broken - congrats, you’ve just discovered my debugging stage live.  
+                                If it’s not - then enjoy the ride! And yes, the source code is open, so feel free to peek behind the curtain on GitHub."
+                            link="https://karakay-v.github.io/"
+                            sourceLink="https://github.com/Karakay-V/portfolio/" />
             </div>
 
         </div>
@@ -45,9 +47,9 @@ when an unknown printer took a galley of type and scrambled it to specimen book.
 <script lang="ts">
 import { defineComponent } from 'vue';
 import Project from '../UI/Project.vue';
-import ProjectScreenshoot1 from '../../assets/projects/project-1.png';
-import ProjectScreenshoot2 from '../../assets/projects/project-2.png';
-import ProjectScreenshoot3 from '../../assets/projects/project-3.png';
+import EsettlementScreenshoot from '../../assets/projects/Esettlement.png';
+import USeekScreenshoot from "../../assets/projects/U'Seek.png";
+import PortfolioScreenshoot from '../../assets/projects/Portfolio.png';
 import { Align } from '../../types/align';
 import { useResponsiveAos } from '../../utils/aosHelper';
 
@@ -56,9 +58,9 @@ export default defineComponent({
     data() {
         return({
             Align,
-            ProjectScreenshoot1,
-            ProjectScreenshoot2,
-            ProjectScreenshoot3,
+            EsettlementScreenshoot,
+            USeekScreenshoot,
+            PortfolioScreenshoot,
         });
     },
     components: {
