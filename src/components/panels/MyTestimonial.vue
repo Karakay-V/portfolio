@@ -9,6 +9,8 @@
 
         <div class="wrapper-testimonial_section">
 
+            <!-- Example how to add Testimonials -->
+            
             <div data-aos="fade-up">
                 <Testimonial    :photo="BoyPhoto"
                                 quote="I recently had to jump on 10+ different calls across eight different countries to find the right owner."
