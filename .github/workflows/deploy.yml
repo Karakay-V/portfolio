@@ -18,10 +18,18 @@ jobs:
       - name: Build Vue
         run: npm run build
 
+      - name: Test token permissions
+        env:
+          PERSONAL_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
+        run: |
+          git clone https://x-access-token:${PERSONAL_TOKEN}@github.com/Karakay-V/karakay-v.github.io.git
+          cd karakay-v.github.io
+          git status
+
       - name: Deploy to another repo
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.PERSONAL_TOKEN }}
+          personal_token: ${{ secrets.PERSONAL_TOKEN }}
           publish_dir: ./dist
           external_repository: Karakay-V/karakay-v.github.io
           publish_branch: main
