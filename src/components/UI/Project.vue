@@ -21,12 +21,21 @@
                         {{ description }}
                     </p>
 
-                    <a v-if="link !== ''" class="project-link"
-                        :href="link"
-                        target="_blank"
-                    >
-                        <img class="image-link" :src="LinkIcon" :alt="link" />
-                    </a>
+                    <div class="container-links">
+                        <a v-if="link !== ''" class="project-link"
+                            :href="link"
+                            target="_blank"
+                        >
+                            <img class="image-link" :src="LinkIcon" :alt="link" />
+                        </a>
+
+                        <a v-if="sourceLink !== ''" class="project-link"
+                            :href="sourceLink"
+                            target="_blank"
+                        >
+                            <img class="image-link" :src="SourceIcon" :alt="link" />
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -37,6 +46,7 @@
 import { defineComponent } from 'vue';
 import { Align } from '../../types/align';
 import LinkIcon from '../../assets/icons/readmore-default.png';
+import SourceIcon from '../../assets/icons/source.png';
 
 function isValidLink(value: string): boolean {
   if (value === '') return true; // allow empty (not required)
@@ -68,6 +78,7 @@ export default defineComponent({
         return({
             Align,
             LinkIcon,
+            SourceIcon,
         });
     },
     props: {
@@ -79,6 +90,12 @@ export default defineComponent({
                 (Object.values(Align) as string[]).includes(value),
         },
         link: {
+            type: String,
+            required: false,
+            default: "",
+            validator: isValidLink,
+        },
+        sourceLink: {
             type: String,
             required: false,
             default: "",
@@ -149,10 +166,6 @@ h3, h4, p {
 .inner-project_image {
     border-radius: 19px;
     @include shadow.project-image-shadow;
-
-    @media(max-width: 1260px) {
-
-    }
 }
 
 .wrapper-project_image {
@@ -213,6 +226,15 @@ h3, h4, p {
         letter-spacing: 0.32px;
         line-height: 150%;
         color: $zinc-500;
+    }
+
+    .container-links {
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+        align-items: center;
+        gap: 40px;
+        width: max-content;
     }
 
     .project-link {

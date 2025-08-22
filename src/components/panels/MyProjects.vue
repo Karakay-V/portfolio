@@ -14,7 +14,8 @@
                             number="01"
                             name="Crypto Screener Application"
                             description="I'm Evren Shah Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to specimen book."
-                            link="https://github.com/" />
+                            link="https://github.com/"
+                            sourceLink="https://github.com/" />
             </div>
 
             <div :data-aos="handleAOS('fade-right', 'fade-up')">        
@@ -24,6 +25,7 @@
                             description="I'm Evren Shah Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to specimen book.
 when an unknown printer took a galley of type and scrambled it to specimen book."
                             link="https://github.com/"
+                            sourceLink="https://github.com/"
                             :align="Align.Right" />
             </div>
 
@@ -32,7 +34,8 @@ when an unknown printer took a galley of type and scrambled it to specimen book.
                             number="03"
                             name="Blog Website Template"
                             description="I'm Evren Shah Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to specimen book."
-                            link="https://github.com/" />
+                            link="https://github.com/"
+                            sourceLink="https://github.com/" />
             </div>
 
         </div>
