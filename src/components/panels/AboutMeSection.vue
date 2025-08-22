@@ -13,13 +13,16 @@
 
                 <div class="wrapper-text_block">
                     <p>
-                        I'm a passionate, self-proclaimed designer who specializes in full stack development (React.js & Node.js). I am very enthusiastic about bringing the technical and visual aspects of digital products to life. User experience, pixel perfect design, and writing clear, readable, highly performant code matters to me.
+                        Привіт! Мене звати Владислав, я full-stack розробник, який поєднує бекенд і фронтенд навички для створення сучасних веб-рішень.  
                     </p>
                     <p>
-                        I began my journey as a web developer in 2015, and since then, I've continued to grow and evolve as a developer, taking on new challenges and learning the latest technologies along the way. Now, in my early thirties, 7 years after starting my web development journey, I'm building cutting-edge web applications using modern technologies such as Next.js, TypeScript, Nestjs, Tailwindcss, Supabase and much more.
+                        Мій шлях у програмуванні почався ще у 2021 році. У 2022 я вступив до університету на технічну спеціальність, щоб поглибити свої знання та розвиватися в цій сфері. З того часу я працюю над різними проєктами - від спільних стартапів з однодумцями в університеті до реалізацій особистих ідей, що здаються мені цікавими.  
                     </p>
                     <p>
-                        When I'm not in full-on developer mode, you can find me hovering around on twitter or on indie hacker, witnessing the journey of early startups or enjoying some free time. You can follow me on Twitter where I share tech-related bites and build in public, or you can follow me on GitHub.
+                        У роботі окрім технологій для побудови бекенду, й фронтенду я також користуюсь своїми супутньо набутими знаннями в системному адмініструванні. Ці інструменти дозволяють мені створювати продуктивні, масштабовані та зручні у підтримці додатки.
+                    </p>
+                    <p>
+                        Не обійшлося й без хоббі, я захоплююсь читанням літератури по Психології, Філософії, Саморозвитку, піклуюсь я й про своє тіло, зокрема займаюсь легкою атлетикою та звичайними заняттями в залі з вагою, а також з недавнього часу до цього списку долучилася ще й музика. Моя мета - розвиватися як хороший інженер, яскрава особистість, й гарний співрозмовник.
                     </p>
                 </div>
             </div>
