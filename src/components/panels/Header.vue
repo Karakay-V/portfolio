@@ -11,7 +11,7 @@ const { styles } = useFixedHeader(headerRef)
     <div class="header_indent"></div>
 
     <header id="header" ref="headerRef" :style="styles">
-        <Logo title="Personal" />
+        <Logo />
 
         <nav class="wrapper-navigation_links">
             <div class="underline" :style="underlineStyle"></div>
@@ -265,6 +265,7 @@ a {
     -webkit-backdrop-filter: blur(6px);
     -webkit-transition: all 0.4s ease;
     transition: all 0.4s ease;
+    padding-top: 75px;
 }
 ::v-deep(.bm-item-list) {
     height: calc(100% - 60px);
@@ -274,12 +275,18 @@ a {
     align-items: center;
 }
 .container-burger_menu_nav {
+    width: 100%;
+    padding: 0;
     color: $primary-white !important;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     gap: 30px;
+    .wrapper {
+        width: 100%;
+        text-align: center;
+    }
 }
 ::v-deep(.cross-style) {
     top: 25px;

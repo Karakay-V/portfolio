@@ -103,7 +103,7 @@
     flex-direction: column;
     gap: 12px;
     padding: 5px;
-    width: 100%;
+    width: calc(100% - 5px - 5px);
     max-width: 500px;
   }
 
