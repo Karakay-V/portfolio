@@ -1,0 +1,35 @@
+name: Build and Deploy Vue
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build_vue:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build Vue
+        run: npm run build
+
+      - name: Test token permissions
+        env:
+          PERSONAL_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
+        run: |
+          git clone https://x-access-token:${PERSONAL_TOKEN}@github.com/Karakay-V/karakay-v.github.io.git
+          cd karakay-v.github.io
+          git status
+
+      - name: Deploy to another repo
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          personal_token: ${{ secrets.PERSONAL_TOKEN }}
+          publish_dir: ./dist
+          external_repository: Karakay-V/karakay-v.github.io
+          publish_branch: main
