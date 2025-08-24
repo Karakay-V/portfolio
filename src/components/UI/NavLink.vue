@@ -1,13 +1,13 @@
 <template>
-    <div class="wrapper">
-        <button :class="`${isSelected ? 'selected' : ''} ${theme === Theme.Dark ? 'theme-dark' : 'theme-light'}`" 
-            v-scroll-to="{
-                element: to,
-                duration: 1200,
-                easing: 'easeInOutCubic',
-                offset: -60
-            }"
-        >
+    <div class="wrapper"
+        v-scroll-to="{
+            element: to,
+            duration: 1200,
+            easing: 'easeInOutCubic',
+            offset: -60,
+        }"    
+    >
+        <button :class="`${isSelected ? 'selected' : ''} ${theme === Theme.Dark ? 'theme-dark' : 'theme-light'}`" >
             {{ label }}
         </button>
     </div>

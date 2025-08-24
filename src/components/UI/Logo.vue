@@ -19,7 +19,7 @@ export default defineComponent({
         },
         title: {
             type: String,
-            default: "Personal",
+            default: "",
             required: false,
         },
     },
@@ -29,6 +29,7 @@ export default defineComponent({
 <style scoped lang="scss">
     @use "/src/assets/styles/fonts" as *;
     @use "/src/assets/styles/colors" as *;
+    @use "/src/assets/styles/image";
 
     .wrapper {
         display: flex;
@@ -36,6 +37,7 @@ export default defineComponent({
         align-items: center;
         gap: 12px;
         padding: 6px 0;
+        @include image.prevent-manipulations;
 
         img {
             width: auto;

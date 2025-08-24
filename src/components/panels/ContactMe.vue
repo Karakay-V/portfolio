@@ -75,11 +75,6 @@
                             hitechnic00074220@gmail.com
                         </a>
                     </h4>
-                    <h4 class="contact-phone">
-                        <a href="tel: 1234567890">
-                            1234567890
-                        </a>
-                    </h4>
                 </div>
             </div>
         </div>
@@ -371,8 +366,7 @@ h3, h4, p, span, a {
             gap: 12px;
         }
 
-        h4.contact-email,
-        h4.contact-phone {
+        h4.contact-email {
             @include fonts.sora-font(600);
             @include fonts.responsive-font(28, 20, 1440);
             color: $primary-black;
