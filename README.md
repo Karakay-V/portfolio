@@ -1,5 +1,3 @@
-<!-- Improved compatibility of back to top link: See: https://github.com/othneildrew/Best-README-Template/pull/73 -->
-<a id="readme-top"></a>
 <!--
 *** Thanks for checking out the Best-README-Template. If you have a suggestion
 *** that would make this better, please fork the repo and create a pull request
@@ -49,8 +47,6 @@
 
 This project is my personal portfolio website where I present myself as a developer, highlight my skills, and share the projects I’ve been working on.  
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 ### Built With
 
@@ -60,9 +56,6 @@ This project is my personal portfolio website where I present myself as a develo
 * [![TypeScript][TypeScript-badge]][TypeScript-url]
 * [![Sass][Sass-badge]][Sass-url]
 * [![Docker][Docker-badge]][Docker-url]
-
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 <!-- GETTING STARTED -->
@@ -99,15 +92,11 @@ This is an example of how to list things you need to use the software and how to
    npm run build
    ```
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 <!-- LICENSE -->
 ## License
 
 Distributed under the MIT License. See `LICENSE` for more information.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 <!-- CONTACT -->
@@ -116,8 +105,6 @@ Distributed under the MIT License. See `LICENSE` for more information.
 Vladyslav Karakai - [LinkedIn][linkedin-url] - hitechnic00074220@gmail.com
 
 Project Link: [https://github.com/Karakay-V/portfolio](https://github.com/Karakay-V/portfolio)
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
