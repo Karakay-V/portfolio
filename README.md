@@ -112,7 +112,7 @@ Project Link: [https://github.com/Karakay-V/portfolio](https://github.com/Karaka
 [stars-shield]: https://img.shields.io/github/stars/Karakay-V/portfolio.svg?style=for-the-badge
 [stars-url]: https://github.com/Karakay-V/portfolio/stargazers
 [license-shield]: https://img.shields.io/github/license/Karakay-V/portfolio.svg?style=for-the-badge
-[license-url]: https://github.com/Karakay-V/portfolio/blob/master/LICENSE.txt
+[license-url]: https://github.com/Karakay-V/portfolio/blob/master/LICENSE
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/karakay-v
 [portfolio-screenshot]: src/assets/screenshoot.png
